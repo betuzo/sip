@@ -91,3 +91,29 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails {
+   mail {
+     host = "smtp.gmail.com"
+     port = 465
+     username = "mixquiahualainfo@gmail.com"
+     password = "mixquiahual4%"
+     props = ["mail.smtp.auth":"true", 					   
+              "mail.smtp.socketFactory.port":"465",
+              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+              "mail.smtp.socketFactory.fallback":"false"]
+   }
+}
+
+grails.resources.modules = {
+	application {
+    	resource url:'/js/application.js'
+	}
+}
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.valledelbit.sip.SecUser'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.valledelbit.sip.SecUserSecRole'
+grails.plugins.springsecurity.authority.className = 'org.valledelbit.sip.SecRole'
+grails.plugins.springsecurity.requestMap.className = 'org.valledelbit.sip.SecRequestmap'
+grails.plugins.springsecurity.securityConfigType = 'Requestmap'
